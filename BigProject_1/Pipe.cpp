@@ -1,6 +1,7 @@
 #include "Pipe.h"
 #include "TextureManager.h"
 #include <cstdlib>
+#include <algorithm>
 
 Pipe::Pipe(SDL_Renderer* renderer, int x) : renderer(renderer) {
     texture = TextureManager::LoadTexture("Game_Images/Pipe_white.png", renderer);
