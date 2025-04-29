@@ -173,7 +173,7 @@ void Game::gameOver() {
     soundManager->stopBackgroundMusic();
     soundManager->stopAllSounds();
     soundManager->playGameOverSound();
-    std::cout << "Game Over! Final Score: " << score << std::endl;
+    std::cout << "Final Score: " << score << std::endl;
 }
 
 void Game::checkIfBirdPassesPipe() {
