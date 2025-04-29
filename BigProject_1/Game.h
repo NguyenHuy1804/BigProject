@@ -1,18 +1,17 @@
 ﻿#pragma once
-#include <SDL.h>
-#include <SDL_image.h>
 #include "Bird.h"
 #include "Pipe.h"
-#include "TextureManager.h"
 #include "StartScreen.h"
-#include "Background.h"
 #include "GameOverScreen.h"
+#include "Background.h"
+#include "VolumeControl.h"
 #include <vector>
 
 class Game {
 public:
     Game();
     ~Game();
+
     bool init(const char* title, int width, int height);
     void run();
     void clean();
@@ -22,17 +21,22 @@ private:
     void update();
     void render();
     void reset();
+    void gameOver();
+    void checkIfBirdPassesPipe();
+    void renderScore();
 
     SDL_Window* window;
     SDL_Renderer* renderer;
     bool isRunning;
-    enum State { START, PLAYING, GAMEOVER } gameState;
+    enum GameState { START, PLAYING, GAMEOVER } gameState;
 
     Bird* bird;
     std::vector<Pipe*> pipes;
     int pipeSpawnTimer;
+    int score;
 
     StartScreen* startScreen;
     GameOverScreen* gameOverScreen;
     Background* background;
+    VolumeControl* volumeControl;
 };

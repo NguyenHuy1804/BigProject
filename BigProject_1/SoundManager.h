@@ -1,32 +1,32 @@
-#pragma once
-#ifndef SOUNDMANAGER_H
+﻿#ifndef SOUNDMANAGER_H
 #define SOUNDMANAGER_H
 
 #include <SDL_mixer.h>
-#include <string>
+#include <iostream>
 
 class SoundManager {
 public:
     SoundManager();
     ~SoundManager();
+    bool loadSounds();
 
-    bool loadSounds();  // Load all necessary sounds
-
+    void playStartScreenSound();
     void playFlapSound();
     void playPassPipeSound();
     void playGameOverSound();
-    void playStartScreenMusic();
-    void playGameMusic();
-    void stopMusic();
+    void playBackgroundMusic();
+    void stopBackgroundMusic();
+    void stopAllSounds();
+    void stopStartScreenSound();
+
     void clean();
+
 private:
+    Mix_Chunk* startScreenSound;
     Mix_Chunk* flapSound;
     Mix_Chunk* passPipeSound;
     Mix_Chunk* gameOverSound;
-
-    Mix_Music* startScreenMusic;
-    Mix_Music* gameMusic;
+    Mix_Music* backgroundMusic;
 };
 
 #endif
-    
