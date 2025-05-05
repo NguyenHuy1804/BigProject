@@ -6,7 +6,7 @@ VolumeControl::VolumeControl(SDL_Renderer* renderer, int screenWidth, int screen
     : renderer(renderer), menuTexture(nullptr), knobTexture(nullptr), font(nullptr),
     visible(false), volume(50), dragging(false), gamePaused(false) {
 
-    // Kích thước menu setting (600x400)
+    
     menuRect = {
         (screenWidth - 500) / 2,
         (screenHeight - 300) / 2,
@@ -14,7 +14,7 @@ VolumeControl::VolumeControl(SDL_Renderer* renderer, int screenWidth, int screen
         300,
     };
 
-    // Thanh volume bar bên trong menu (400x30)
+    
     barRect = {
         menuRect.x + 100,
         menuRect.y + 200,
@@ -22,7 +22,7 @@ VolumeControl::VolumeControl(SDL_Renderer* renderer, int screenWidth, int screen
         30
     };
 
-    // Nút điều chỉnh volume (20x40)
+   
     knobRect = {
         barRect.x + (volume * barRect.w / 100) - 10,
         barRect.y - 5,
@@ -38,21 +38,21 @@ VolumeControl::~VolumeControl() {
 }
 
 void VolumeControl::loadResources() {
-    // Load menu background
+    
     SDL_Surface* surface = IMG_Load("Game_Images/Menu_Setting_1.png");
     if (surface) {
         menuTexture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
 
-    // Load volume knob
+    
     surface = IMG_Load("Game_Images/Volume_Button.png");
     if (surface) {
         knobTexture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
 
-    // Load font
+  
     font = TTF_OpenFont("Fonts/Pixeboy-z8XGD.ttf", 36);
     if (!font) {
         std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
@@ -98,21 +98,20 @@ void VolumeControl::handleEvent(SDL_Event& e) {
 void VolumeControl::render() {
     if (!visible) return;
 
-    // Render menu background
     if (menuTexture) {
         SDL_RenderCopy(renderer, menuTexture, NULL, &menuRect);
     }
     else {
-        // Fallback nếu không có texture
+
         SDL_SetRenderDrawColor(renderer, 50, 50, 80, 255);
         SDL_RenderFillRect(renderer, &menuRect);
     }
 
-    // Render thanh volume
+   
     SDL_SetRenderDrawColor(renderer, 100, 100, 150, 255);
     SDL_RenderFillRect(renderer, &barRect);
 
-    // Render nút điều chỉnh
+
     if (knobTexture) {
         SDL_RenderCopy(renderer, knobTexture, NULL, &knobRect);
     }
@@ -121,7 +120,7 @@ void VolumeControl::render() {
         SDL_RenderFillRect(renderer, &knobRect);
     }
 
-    // Render tiêu đề
+
     if (font) {
         SDL_Color white = { 255, 255, 255, 255 };
         SDL_Surface* surface = TTF_RenderText_Solid(font, "VOLUME BAR", white);

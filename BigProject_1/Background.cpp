@@ -20,7 +20,7 @@ Background::Background(SDL_Renderer* renderer) {
         std::cout << "Failed to create background texture: " << SDL_GetError() << std::endl;
     }
 
-    // Kích thước khung nền hiển thị (800x600)
+
     rect1 = { 0, 0, 800, 600 };
     rect2 = { 800, 0, 800, 600 };
 }

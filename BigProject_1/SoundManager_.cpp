@@ -71,7 +71,7 @@ void SoundManager::playGameOverSound() {
 
 void SoundManager::playBackgroundMusic() {
     if (backgroundMusic) {
-        Mix_PlayMusic(backgroundMusic, -1); // -1 = loop mãi mãi
+        Mix_PlayMusic(backgroundMusic, -1); 
     }
     else {
         std::cerr << "Background music not loaded!" << std::endl;
@@ -83,12 +83,12 @@ void SoundManager::stopBackgroundMusic() {
 }
 
 void SoundManager::stopAllSounds() {
-    Mix_HaltChannel(-1); // Dừng tất cả các kênh âm thanh
-    Mix_HaltMusic();     // Dừng nhạc nền
+    Mix_HaltChannel(-1); 
+    Mix_HaltMusic();     
 }
 
 void SoundManager::stopStartScreenSound() {
-    // Tìm và dừng kênh đang phát startScreenSound
+    
     int channels = Mix_AllocateChannels(-1);
     for (int i = 0; i < channels; i++) {
         if (Mix_GetChunk(i) == startScreenSound) {

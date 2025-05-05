@@ -17,8 +17,8 @@ public:
     bool collidesWith(Bird* bird);
     bool isPassed() const;  
     void setPassed(bool value);  
-    int getGapY() const { return gapY; } // Thêm hàm này
-    int getGapHeight() const { return gapHeight; } // Và/hoặc hàm này
+    int getGapY() const { return gapY; }
+    int getGapHeight() const { return gapHeight; } 
 
 private:
     int gapY;
