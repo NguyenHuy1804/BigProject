@@ -42,6 +42,9 @@
     <ClCompile Include="SoundManager_.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VolumeControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -66,6 +69,9 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="SoundManager.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeControl.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,16 @@
-#include "Pipe.h"
+﻿#include "Pipe.h"
 #include "TextureManager.h"
 #include <cstdlib>
 #include <algorithm>
+
+
+bool Pipe::isPassed() const {
+    return passed;
+}
+
+void Pipe::setPassed(bool value) {
+    passed = value;
+}
 
 Pipe::Pipe(SDL_Renderer* renderer, int x) : renderer(renderer) {
     texture = TextureManager::LoadTexture("Game_Images/Pipe_white.png", renderer);
@@ -23,4 +32,12 @@ void Pipe::render() {
 bool Pipe::collidesWith(Bird* bird) {
     SDL_Rect birdRect = bird->getRect();
     return SDL_HasIntersection(&birdRect, &topPipe) || SDL_HasIntersection(&birdRect, &bottomPipe);
+}
+
+int Pipe::getX() const {
+    return topPipe.x;
+}
+
+int Pipe::getWidth() {
+    return topPipe.w;
 }
