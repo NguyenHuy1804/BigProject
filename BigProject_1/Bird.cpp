@@ -27,4 +27,4 @@ void Bird::flap() {
 
 SDL_Rect Bird::getRect() {
     return rect;
-}
+}         

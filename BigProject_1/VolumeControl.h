@@ -19,19 +19,19 @@ public:
 private:
     SDL_Renderer* renderer;
 
-    // Textures
+
     SDL_Texture* menuTexture;
     SDL_Texture* knobTexture;
 
-    // Font
+    
     TTF_Font* font;
 
-    // Rects
+
     SDL_Rect menuRect;
     SDL_Rect barRect;
     SDL_Rect knobRect;
 
-    // State
+    
     bool visible;
     int volume;
     bool dragging;
