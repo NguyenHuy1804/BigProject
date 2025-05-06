@@ -1,7 +1,6 @@
 ## Thông tin sinh viên:
 ## Họ và tên: Nguyễn Quang Huy
 
-## Mã sinh viên: 24022803
 
 # Space Rush - The end of all kinds (SDL2 Version)
 
