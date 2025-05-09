@@ -114,10 +114,10 @@ Game sử dụng **SDL2** và thư viện mở rộng **SDL2_image** để xử 
 ---
 
 
-## Công nghệ sử dụng
-- Ngôn ngữ: **C++**
-- Thư viện: `SDL2`, `SDL2_image`, `SDL2_ttf`, `SDL2_mixer`
-- Hệ điều hành phát triển: **Windows**
-
----
+## Tài liệu tham khảo:
+- Tham khảo code mẫu trên file LTNC-Tài liệu bổ sung
+- Tham khảo code mẫu trên SDL2 và Lazy Foo
+- Tham khảo code mẫu của AI
+- Một số hình ảnh lấy trên google chrome 
+- Âm thanh hiệu ứng lấy trên Pixabay
 
